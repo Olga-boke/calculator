@@ -47,11 +47,9 @@ public class CalculatorController {
                        @RequestParam (name = "num2", required = false) Integer b){
         if( a== null || b == null) return " Не передано одно из полей";
         double divide;
-        try {
-            divide = calculatorService.divide(a, b);
-        } catch (Throwable e){
-            return e.getMessage();
-        }
+
+        divide = calculatorService.divide(a, b);
+
         return a + "-" + b + "=" + divide;
     }
 
